@@ -1,0 +1,73 @@
+[gd_scene load_steps=13 format=1]
+
+[ext_resource path="res://Runner.gd" type="Script" id=1]
+[ext_resource path="res://Assets/sounds/jump.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Assets/PNG/Animation/Jumping/jump.png" type="Texture" id=3]
+[ext_resource path="res://Assets/PNG/Animation/Climbing/00.png" type="Texture" id=4]
+[ext_resource path="res://Assets/PNG/Animation/Climbing/01.png" type="Texture" id=5]
+[ext_resource path="res://Assets/PNG/Animation/Climbing/02.png" type="Texture" id=6]
+[ext_resource path="res://Assets/PNG/Animation/Climbing/03.png" type="Texture" id=7]
+[ext_resource path="res://Assets/PNG/Animation/Climbing/04.png" type="Texture" id=8]
+[ext_resource path="res://Assets/PNG/Animation/Climbing/05.png" type="Texture" id=9]
+[ext_resource path="res://Assets/PNG/Animation/Climbing/06.png" type="Texture" id=10]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+height = 20.0
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "Jumping",
+"speed": 13.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Climbing",
+"speed": 30.0
+} ]
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+
+transform/pos = Vector2( 51.1407, 154.645 )
+transform/scale = Vector2( 3.93491, 5.12687 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1.12915, 0, 0, 1.10776, 0.110384, -0.309498 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 0
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+
+[node name="jump" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 2 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 10.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+
+transform/pos = Vector2( 2.63332, -1.09424 )
+transform/scale = Vector2( 0.165747, 0.113459 )
+frames = SubResource( 2 )
+animation = "Climbing"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( 0.110384, -0.309498 )
+transform/scale = Vector2( 1.12915, 1.10776 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE abiword PUBLIC "-//ABISOURCE//DTD AWML 1.0 Strict//EN" "http://www.abisource.com/awml.dtd">
+<abiword template="false" xmlns:ct="http://www.abisource.com/changetracking.dtd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:math="http://www.w3.org/1998/Math/MathML" xid-max="9" xmlns:dc="http://purl.org/dc/elements/1.1/" styles="unlocked" fileformat="1.0" xmlns:svg="http://www.w3.org/2000/svg" xmlns:awml="http://www.abisource.com/awml.dtd" xmlns="http://www.abisource.com/awml.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" version="0.99.2" xml:space="preserve" props="dom-dir:ltr; document-footnote-restart-section:0; document-endnote-type:numeric; document-endnote-place-enddoc:1; document-endnote-initial:1; lang:en-US; document-endnote-restart-section:0; document-footnote-restart-page:0; document-footnote-type:numeric; document-footnote-initial:1; document-endnote-place-endsection:0">
+<!-- ======================================================================== -->
+<!-- This file is an AbiWord document.                                        -->
+<!-- AbiWord is a free, Open Source word processor.                           -->
+<!-- More information about AbiWord is available at http://www.abisource.com/ -->
+<!-- You should not edit this file by hand.                                   -->
+<!-- ======================================================================== -->
+
+<metadata>
+<m key="abiword.date_last_changed">Mon Jun 17 14:55:15 2024
+</m>
+<m key="abiword.generator">AbiWord</m>
+<m key="dc.creator">root</m>
+<m key="dc.date">Mon Jun 17 14:40:31 2024
+</m>
+<m key="dc.format">application/x-abiword</m>
+</metadata>
+<rdf>
+</rdf>
+<history version="5" edit-time="1592" last-saved="1718628915" uid="22c7a4ea-2ca5-11ef-9371-dcba2c9704ce">
+<version id="5" started="1718628031" uid="d779c97e-2ca8-11ef-9371-dcba2c9704ce" auto="0" top-xid="8"/>
+</history>
+<styles>
+<s type="P" name="Normal" followedby="Current Settings" props="font-family:DejaVu Sans; margin-top:0pt; color:000000; margin-left:0pt; text-position:normal; widows:2; font-style:normal; text-indent:0in; font-variant:normal; font-weight:normal; margin-right:0pt; font-size:12pt; text-decoration:none; margin-bottom:0pt; line-height:1.0; bgcolor:transparent; text-align:left; font-stretch:normal"/>
+</styles>
+<pagesize pagetype="Letter" orientation="portrait" width="8.500000" height="11.000000" units="in" page-scale="1.000000"/>
+<section xid="7" props="page-margin-footer:0.5in; page-margin-header:0.5in">
+<p style="Normal" xid="8"><c props="font-size:8pt">Collectibles</c></p>
+<p style="Normal" xid="2"><c props="font-size:8pt"></c><c props="font-size:8pt"><br/></c><c props="text-decoration:line-through ; font-size:8pt">1. Speed</c></p>
+<p style="Normal" xid="3"><c props="text-decoration:line-through ; font-size:8pt">2. 1UP</c><c props="font-size:8pt"><br/>3. Invincible/Destruction: [Red Fire Orb, player gets  fire shield?]</c></p>
+<p style="Normal" xid="4"><c props="font-size:8pt">	On spike collision, destroy spike<br/>4. Time Dilation: [Purple Space Orb, player gets clock?] </c></p>
+<p style="Normal" xid="5"><c props="font-size:8pt">	With Speed = Enemies frozen, player back to normal speed</c></p>
+<p style="Normal" xid="6"><c props="font-size:8pt">	Without speed =  Enemies slow, player increases speed</c></p>
+</section>
+</abiword>
