@@ -1,7 +1,5 @@
 extends Node2D
 
-# HELLO WORLD!
-
 onready var runner = get_node("KinematicBody2D")
 onready var flag = get_node("Area2D")
 onready var powerUp1 = get_node("Area2D1")
