@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=1]
+[gd_scene load_steps=27 format=1]
 
 [ext_resource path="res://Stage01.gd" type="Script" id=1]
 [ext_resource path="res://Assets/sounds/bg01.ogg" type="AudioStream" id=2]
@@ -13,11 +13,15 @@
 [ext_resource path="res://Assets/up.png" type="Texture" id=11]
 [ext_resource path="res://Assets/power00.png" type="Texture" id=12]
 [ext_resource path="res://Assets/sounds/power.ogg" type="AudioStream" id=13]
-[ext_resource path="res://Assets/sounds/death.ogg" type="AudioStream" id=14]
-[ext_resource path="res://Assets/Spike.png" type="Texture" id=15]
-[ext_resource path="res://Assets/font/liliput_steps_72.fnt" type="BitmapFont" id=16]
-[ext_resource path="res://Assets/life.png" type="Texture" id=17]
-[ext_resource path="res://Assets/indicator_power00.png" type="Texture" id=18]
+[ext_resource path="res://Assets/power02.png" type="Texture" id=14]
+[ext_resource path="res://Assets/power01.png" type="Texture" id=15]
+[ext_resource path="res://Assets/sounds/death.ogg" type="AudioStream" id=16]
+[ext_resource path="res://Assets/Spike.png" type="Texture" id=17]
+[ext_resource path="res://Assets/font/liliput_steps_72.fnt" type="BitmapFont" id=18]
+[ext_resource path="res://Assets/life.png" type="Texture" id=19]
+[ext_resource path="res://Assets/indicator_power00.png" type="Texture" id=20]
+[ext_resource path="res://Assets/indicator_power01.png" type="Texture" id=21]
+[ext_resource path="res://Assets/indicator_power02.png" type="Texture" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -38,60 +42,6 @@ points = Vector2Array( 0, -10, 8.66025, 5, -8.66025, 5 )
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 11.4243 )
-
-[sub_resource type="Animation" id=5]
-
-resource/name = "Spike02"
-length = 5.0
-loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("CollisionShape2D2:transform/pos")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
-"times": FloatArray( 0, 2.5, 5 ),
-"transitions": FloatArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -482.383, -346.989 ), Vector2( -482.383, -666.989 ), Vector2( -482.383, -346.989 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("icon2:transform/pos")
-tracks/1/interp = 1
-tracks/1/imported = false
-tracks/1/keys = {
-"times": FloatArray( 0, 2.5, 5 ),
-"transitions": FloatArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -459.369, -343.543 ), Vector2( -459.369, -663.543 ), Vector2( -459.369, -343.543 ) ]
-}
-
-[sub_resource type="Animation" id=6]
-
-resource/name = "Spike03"
-length = 5.0
-loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("icon4:transform/pos")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
-"times": FloatArray( 0, 2.5, 3, 3.5, 5 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 10.9341, -769.798 ), Vector2( 10.9341, -569.798 ), Vector2( 10.9341, -679.798 ), Vector2( 10.9341, -509.798 ), Vector2( 10.9341, -769.798 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CollisionShape2D4:transform/pos")
-tracks/1/interp = 1
-tracks/1/imported = false
-tracks/1/keys = {
-"times": FloatArray( 0, 2.5, 3, 3.5, 5 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 30.1775, -774.023 ), Vector2( 30.1775, -574.023 ), Vector2( 30.1775, -684.023 ), Vector2( 30.1775, -514.023 ), Vector2( 30.1775, -774.023 ) ]
-}
 
 [node name="Node2D" type="Node2D"]
 
@@ -182,8 +132,7 @@ stream/buffering_ms = 500
 
 [node name="Area2D4" type="Area2D" parent="."]
 
-editor/display_folded = true
-transform/pos = Vector2( 5.548, 645.717 )
+transform/pos = Vector2( -544.452, 645.717 )
 input/pickable = true
 shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 3.80515, 0, 0, 3.80515, 171.612, -423.994 )
@@ -220,7 +169,7 @@ stream/buffering_ms = 500
 
 [node name="Particles2D1" type="Particles2D" parent="."]
 
-transform/pos = Vector2( 176.152, 216.706 )
+transform/pos = Vector2( -373.848, 216.706 )
 transform/scale = Vector2( 0.09, 0.09 )
 config/amount = 1
 config/lifetime = 1.3
@@ -255,7 +204,7 @@ color/color = Color( 0.875, 1, 0, 1 )
 
 [node name="Area2D1" type="Area2D" parent="."]
 
-transform/pos = Vector2( 154.412, 972.725 )
+transform/pos = Vector2( -445.939, 912.304 )
 input/pickable = true
 shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 3.80515, 0, 0, 3.80515, 171.612, -423.994 )
@@ -282,7 +231,7 @@ _update_shape_index = 0
 [node name="power" type="StreamPlayer" parent="Area2D1"]
 
 stream/stream = ExtResource( 13 )
-stream/play = true
+stream/play = false
 stream/loop = false
 stream/volume_db = -10.0
 stream/autoplay = false
@@ -292,7 +241,151 @@ stream/buffering_ms = 500
 
 [node name="Particles2D" type="Particles2D" parent="."]
 
-transform/pos = Vector2( 325.016, 543.714 )
+transform/pos = Vector2( -275.335, 483.293 )
+transform/scale = Vector2( 0.09, 0.09 )
+config/amount = 1
+config/lifetime = 1.3
+config/time_scale = 5.0
+config/process_mode = 1
+config/explosiveness = 0.8
+config/texture = ExtResource( 11 )
+params/direction = 360.0
+params/spread = 360.0
+params/linear_velocity = 300.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 1.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 3.0
+params/final_size = 0.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 0.3
+randomness/spread = 0.3
+randomness/spin_velocity = 1.3
+randomness/orbit_velocity = 0.8
+randomness/initial_angle = 0.8
+randomness/initial_size = 1.0
+randomness/final_size = 0.5
+color/color = Color( 0.875, 1, 0, 1 )
+
+[node name="Area2D6" type="Area2D" parent="."]
+
+transform/pos = Vector2( 180.996, 984.122 )
+input/pickable = true
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 3.80515, 0, 0, 3.80515, 171.612, -423.994 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="icon" type="Sprite" parent="Area2D6"]
+
+transform/pos = Vector2( 173.999, -424.009 )
+transform/scale = Vector2( 0.285408, 0.285408 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6"]
+
+transform/pos = Vector2( 171.612, -423.994 )
+transform/scale = Vector2( 3.80515, 3.80515 )
+shape = SubResource( 2 )
+trigger = true
+_update_shape_index = 0
+
+[node name="powerSlow" type="StreamPlayer" parent="Area2D6"]
+
+stream/stream = ExtResource( 13 )
+stream/play = false
+stream/loop = false
+stream/volume_db = -5.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Particles2D3" type="Particles2D" parent="."]
+
+transform/pos = Vector2( 351.6, 555.112 )
+transform/scale = Vector2( 0.09, 0.09 )
+config/amount = 1
+config/lifetime = 1.3
+config/time_scale = 5.0
+config/process_mode = 1
+config/explosiveness = 0.8
+config/texture = ExtResource( 11 )
+params/direction = 360.0
+params/spread = 360.0
+params/linear_velocity = 300.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 1.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 3.0
+params/final_size = 0.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 0.3
+randomness/spread = 0.3
+randomness/spin_velocity = 1.3
+randomness/orbit_velocity = 0.8
+randomness/initial_angle = 0.8
+randomness/initial_size = 1.0
+randomness/final_size = 0.5
+color/color = Color( 0.875, 1, 0, 1 )
+
+[node name="Area2D5" type="Area2D" parent="."]
+
+transform/pos = Vector2( -668.841, 831.81 )
+input/pickable = true
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 3.80515, 0, 0, 3.80515, 171.612, -423.994 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="icon" type="Sprite" parent="Area2D5"]
+
+transform/pos = Vector2( 173.999, -424.009 )
+transform/scale = Vector2( 0.285408, 0.285408 )
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5"]
+
+transform/pos = Vector2( 171.612, -423.994 )
+transform/scale = Vector2( 3.80515, 3.80515 )
+shape = SubResource( 2 )
+trigger = true
+_update_shape_index = 0
+
+[node name="powerInvin" type="StreamPlayer" parent="Area2D5"]
+
+stream/stream = ExtResource( 13 )
+stream/play = false
+stream/loop = false
+stream/volume_db = -5.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Particles2D2" type="Particles2D" parent="."]
+
+transform/pos = Vector2( -498.237, 402.799 )
 transform/scale = Vector2( 0.09, 0.09 )
 config/amount = 1
 config/lifetime = 1.3
@@ -327,16 +420,16 @@ color/color = Color( 0.875, 1, 0, 1 )
 
 [node name="Area2D2" type="Area2D" parent="."]
 
-transform/pos = Vector2( 513.525, 825.336 )
+transform/pos = Vector2( 1293.53, 825.336 )
 input/pickable = true
 shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( -2.3053e-07, 5.27392, -5.08517, -2.2228e-07, -442.193, -454.579 )
+shapes/0/transform = Matrix32( -2.67899e-07, 6.12883, -5.90949, -2.58312e-07, -1163, -300.537 )
 shapes/0/trigger = true
 shapes/1/shape = SubResource( 3 )
-shapes/1/transform = Matrix32( -2.76331e-07, -6.32172, 6.09548, -2.66442e-07, 11.6356, -670.423 )
+shapes/1/transform = Matrix32( -2.52894e-07, -5.78554, 5.57849, -2.43844e-07, -778.667, -629.236 )
 shapes/1/trigger = true
 shapes/2/shape = SubResource( 4 )
-shapes/2/transform = Matrix32( 36.5857, 0, 0, 3.95666, -196.112, -923.652 )
+shapes/2/transform = Matrix32( 36.5857, 0, 0, 3.95666, -986.112, -923.652 )
 shapes/2/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -345,7 +438,7 @@ angular_damp = 1.0
 
 [node name="death" type="StreamPlayer" parent="Area2D2"]
 
-stream/stream = ExtResource( 14 )
+stream/stream = ExtResource( 16 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 15.0
@@ -354,65 +447,40 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Area2D2"]
-
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
-anims/Spike02 = SubResource( 5 )
-playback/active = true
-playback/speed = 1.0
-blend_times = [  ]
-autoplay = ""
-
-[node name="icon2" type="Sprite" parent="Area2D2"]
-
-transform/pos = Vector2( -425.174, -449.231 )
-transform/rot = 180.0
-transform/scale = Vector2( 0.28815, 0.28815 )
-texture = ExtResource( 15 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
-
-transform/pos = Vector2( -442.193, -454.579 )
-transform/rot = -90.0
-transform/scale = Vector2( 5.27392, 5.08517 )
-shape = SubResource( 3 )
-trigger = true
-_update_shape_index = 0
-
-[node name="AnimationPlayer3" type="AnimationPlayer" parent="Area2D2"]
-
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
-anims/Spike02 = SubResource( 5 )
-anims/Spike03 = SubResource( 6 )
-playback/active = true
-playback/speed = 1.0
-blend_times = [  ]
-autoplay = ""
-
 [node name="icon4" type="Sprite" parent="Area2D2"]
 
-transform/pos = Vector2( -5.30551, -665.336 )
-transform/rot = 180.0
+transform/pos = Vector2( -1143.29, -302.765 )
 transform/scale = Vector2( 0.338043, 0.338043 )
-texture = ExtResource( 15 )
+texture = ExtResource( 17 )
 flip_h = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D2"]
 
-transform/pos = Vector2( 11.6356, -670.423 )
+transform/pos = Vector2( -1163, -300.537 )
+transform/rot = -90.0
+transform/scale = Vector2( 6.12883, 5.90949 )
+shape = SubResource( 3 )
+trigger = true
+_update_shape_index = 0
+
+[node name="icon5" type="Sprite" parent="Area2D2"]
+
+transform/pos = Vector2( -797.05, -631.082 )
+transform/scale = Vector2( 0.338043, 0.338043 )
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D2"]
+
+transform/pos = Vector2( -778.667, -629.236 )
 transform/rot = 90.0
-transform/scale = Vector2( 6.32172, 6.09548 )
+transform/scale = Vector2( 5.78554, 5.57849 )
 shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 1
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Area2D2"]
 
-transform/pos = Vector2( -196.112, -923.652 )
+transform/pos = Vector2( -986.112, -923.652 )
 transform/scale = Vector2( 36.5857, 3.95666 )
 shape = SubResource( 4 )
 trigger = false
@@ -420,14 +488,13 @@ _update_shape_index = 2
 
 [node name="Area2D3" type="Area2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 226.609, 85.4425 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 8.90316, 0, 0, 51.6675, 449.056, 381.149 )
+shapes/0/transform = Matrix32( 8.90316, 0, 0, 51.6675, 447.056, 383.149 )
 shapes/0/trigger = true
 shapes/1/shape = SubResource( 1 )
-shapes/1/transform = Matrix32( 8.90316, 0, 0, 51.6675, -265.217, 381.149 )
+shapes/1/transform = Matrix32( 8.90316, 0, 0, 51.6675, -260.217, 381.149 )
 shapes/1/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -436,7 +503,7 @@ angular_damp = 1.0
 
 [node name="RightWall" type="CollisionShape2D" parent="Area2D3"]
 
-transform/pos = Vector2( 449.056, 381.149 )
+transform/pos = Vector2( 447.056, 383.149 )
 transform/scale = Vector2( 8.90316, 51.6675 )
 shape = SubResource( 1 )
 trigger = true
@@ -444,7 +511,7 @@ _update_shape_index = 0
 
 [node name="LeftWall" type="CollisionShape2D" parent="Area2D3"]
 
-transform/pos = Vector2( -265.217, 381.149 )
+transform/pos = Vector2( -260.217, 381.149 )
 transform/scale = Vector2( 8.90316, 51.6675 )
 shape = SubResource( 1 )
 trigger = true
@@ -452,6 +519,7 @@ _update_shape_index = 1
 
 [node name="Score" type="Label" parent="."]
 
+visibility/visible = false
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -460,7 +528,7 @@ margin/left = 202.0
 margin/top = -7.0
 margin/right = 408.0
 margin/bottom = 68.0
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0, 1, 0.132812, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
@@ -483,7 +551,7 @@ margin/left = 401.0
 margin/top = 831.0
 margin/right = 557.0
 margin/bottom = 906.0
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
@@ -507,7 +575,7 @@ margin/left = 291.0
 margin/top = 865.0
 margin/right = 602.0
 margin/bottom = 940.0
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Lives:"
@@ -520,26 +588,37 @@ max_lines_visible = -1
 
 transform/pos = Vector2( 429.979, 848.65 )
 transform/scale = Vector2( 0.12873, 0.12873 )
-texture = ExtResource( 17 )
+texture = ExtResource( 19 )
 
 [node name="life2" type="Sprite" parent="."]
 
 transform/pos = Vector2( 364.701, 848.65 )
 transform/scale = Vector2( 0.12873, 0.12873 )
-texture = ExtResource( 17 )
+texture = ExtResource( 19 )
 
 [node name="life3" type="Sprite" parent="."]
 
 transform/pos = Vector2( 293.953, 849.385 )
 transform/scale = Vector2( 0.12873, 0.12873 )
-texture = ExtResource( 17 )
+texture = ExtResource( 19 )
 
 [node name="indiSpeed" type="Sprite" parent="."]
 
-visibility/visible = false
 transform/pos = Vector2( 403.507, 828.666 )
 transform/scale = Vector2( 0.296445, 0.296445 )
-texture = ExtResource( 18 )
+texture = ExtResource( 20 )
+
+[node name="indiInvin" type="Sprite" parent="."]
+
+transform/pos = Vector2( 466.65, 815.523 )
+transform/scale = Vector2( 0.337398, 0.337398 )
+texture = ExtResource( 21 )
+
+[node name="indiSlow" type="Sprite" parent="."]
+
+transform/pos = Vector2( 327.724, 824.449 )
+transform/scale = Vector2( 0.184559, 0.184559 )
+texture = ExtResource( 22 )
 
 [connection signal="finished" from="GameOver" to="." method="_on_GameOver_finished"]
 
@@ -552,6 +631,14 @@ texture = ExtResource( 18 )
 [connection signal="body_enter" from="Area2D1" to="." method="_on_Area2D1_body_enter"]
 
 [connection signal="finished" from="Area2D1/power" to="." method="_on_power_finished"]
+
+[connection signal="body_enter" from="Area2D6" to="." method="_on_Area2D6_body_enter"]
+
+[connection signal="finished" from="Area2D6/powerSlow" to="." method="_on_powerSlow_finished"]
+
+[connection signal="body_enter" from="Area2D5" to="." method="_on_Area2D5_body_enter"]
+
+[connection signal="finished" from="Area2D5/powerInvin" to="." method="_on_powerInvin_finished"]
 
 [connection signal="body_enter" from="Area2D2" to="." method="_on_Area2D2_body_enter"]
 

@@ -31,8 +31,8 @@ func _ready():
 		lblOver.hide()
 		if score != null && score > 0:
 			lblHigh.set_text(str(score))
-			lblText.show()
-			lblHigh.show()
+			#lblText.show()
+			#lblHigh.show()
 		else:
 			lblText.hide()
 			lblHigh.hide()
@@ -43,8 +43,8 @@ func _ready():
 		lblOver.show()
 		if score != null && score > 0:
 			lblHigh.set_text(str(score))
-			lblText.show()
-			lblHigh.show()
+			#lblText.show()
+			#lblHigh.show()
 		else:
 			lblText.hide()
 			lblHigh.hide()

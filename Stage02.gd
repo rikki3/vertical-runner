@@ -54,7 +54,6 @@ func _ready():
 	particlesHP.hide()
 	particlesSlw.hide()
 	powerUp2.hide()
-	powerUp3.hide()
 	indiI.hide()
 	indiS.hide()
 	indiSl.hide()
@@ -86,7 +85,7 @@ func _on_Area2D_body_enter( body ):
 	soundVi.play()
 	lblScore.set_text(str(score))
 	OS.delay_msec(650)
-	get_tree().change_scene("res://Stage02.tscn")
+	get_tree().change_scene("res://Stage.tscn")
 
 func _on_Area2D2_body_enter( body ):
 	if !powerInvin:
@@ -166,7 +165,7 @@ func _on_GameOver_finished():
 	if Globals.has("score") && int(save.get_as_text()) < Globals.get("score"):
 		_save()
 	save.close()
-	get_tree().change_scene("res://MainMenu.tscn")
+	get_tree().change_scene("res://Stage.tscn")
 	
 func _save():
 	save.open("res://save.dat", 3)
@@ -194,8 +193,8 @@ func _on_Area2D5_body_enter( body ):
 	soundIn.play()
 
 func _on_powerInvin_finished():
-	indiI.hide()
-	powerInvin = false
+	#indiI.hide()
+	#powerInvin = false
 	particlesStr.queue_free()
 	powerUp3.queue_free()
 

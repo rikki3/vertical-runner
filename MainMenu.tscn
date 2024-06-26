@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/sounds/start.ogg" type="AudioStream" id=2]
@@ -8,9 +8,8 @@
 [ext_resource path="res://Assets/flag_top.png" type="Texture" id=6]
 [ext_resource path="res://Assets/flag_mid.png" type="Texture" id=7]
 [ext_resource path="res://Assets/start.png" type="Texture" id=8]
-[ext_resource path="res://Assets/start_pressed.png" type="Texture" id=9]
-[ext_resource path="res://Assets/start_hover.png" type="Texture" id=10]
-[ext_resource path="res://Assets/font/liliput_steps_72.fnt" type="BitmapFont" id=11]
+[ext_resource path="res://Assets/start_hover.png" type="Texture" id=9]
+[ext_resource path="res://Assets/font/liliput_steps_72.fnt" type="BitmapFont" id=10]
 
 [sub_resource type="Animation" id=1]
 
@@ -129,10 +128,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -267.0
-margin/top = -531.0
-margin/right = -579.0
-margin/bottom = -1141.0
+margin/left = -224.0
+margin/top = -578.0
+margin/right = -524.0
+margin/bottom = -878.0
 alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
@@ -142,15 +141,15 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 155.0
-margin/right = 312.0
-margin/bottom = 455.0
+margin/top = 0.0
+margin/right = 300.0
+margin/bottom = 300.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 8 )
 textures/pressed = ExtResource( 9 )
-textures/hover = ExtResource( 10 )
+textures/hover = ExtResource( 8 )
 params/resize_mode = 0
 params/stretch_mode = 0
 
@@ -165,7 +164,7 @@ margin/left = 5.0
 margin/top = 202.0
 margin/right = 429.0
 margin/bottom = 282.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0, 0.226562, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
@@ -189,7 +188,7 @@ margin/left = 5.0
 margin/top = 272.0
 margin/right = 429.0
 margin/bottom = 352.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
@@ -212,7 +211,7 @@ margin/left = 93.0
 margin/top = 188.0
 margin/right = 318.0
 margin/bottom = 364.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0, 0.226562, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
@@ -235,7 +234,7 @@ margin/left = 93.0
 margin/top = 258.0
 margin/right = 318.0
 margin/bottom = 434.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
@@ -250,6 +249,7 @@ max_lines_visible = -1
 
 [node name="Text" type="Label" parent="."]
 
+visibility/visible = false
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -258,7 +258,7 @@ margin/left = 46.0
 margin/top = 515.0
 margin/right = 305.0
 margin/bottom = 606.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.0078125, 1, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
@@ -273,6 +273,7 @@ max_lines_visible = -1
 
 [node name="HighScore" type="Label" parent="."]
 
+visibility/visible = false
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -281,7 +282,7 @@ margin/left = 425.0
 margin/top = 515.0
 margin/right = 600.0
 margin/bottom = 606.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.0078125, 1, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
