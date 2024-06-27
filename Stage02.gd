@@ -53,6 +53,7 @@ func _ready():
 	particles.hide()
 	particlesHP.hide()
 	particlesSlw.hide()
+	particlesStr.hide()
 	powerUp2.hide()
 	indiI.hide()
 	indiS.hide()
@@ -120,6 +121,7 @@ func _on_Area2D2_body_enter( body ):
 			powerUp2.show()
 	else:
 		print("metal clank/spark sfx")
+		
 
 func trackLife():
 		if lives == 3:
