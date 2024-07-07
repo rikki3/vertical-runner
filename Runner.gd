@@ -1,7 +1,7 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
-onready var anim = get_node("AnimatedSprite")
-onready var sfxJump = get_node("jump")
+@onready var anim = get_node("AnimatedSprite2D")
+@onready var sfxJump = get_node("jump")
 var motion = Vector2()
 var direc
 
@@ -9,7 +9,8 @@ func _ready():
 	direc = "Right"
 
 func _run(vec2):
-	move_and_slide(vec2)
+	set_velocity(vec2)
+	move_and_slide()
 	
 func _direction(status, pwrSpd, pwrSlw):
 	if status == "Climbing":

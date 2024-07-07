@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://7f6nn0my5mc2"
+path="res://.godot/imported/liliput_steps_72.font-41373242d739f3b9de8ee9ec3d467a73.fontdata"
+
+[deps]
+
+source_file="res://Assets/font/liliput_steps_72.font"
+dest_files=["res://.godot/imported/liliput_steps_72.font-41373242d739f3b9de8ee9ec3d467a73.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2
