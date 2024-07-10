@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7w843i2w8wfr"]
+
+[ext_resource type="Script" path="res://Gravity.gd" id="1_e7jel"]
+[ext_resource type="AudioStream" uid="uid://8rlct14ykone" path="res://Assets/sounds/death.ogg" id="2_hverd"]
+[ext_resource type="Texture2D" uid="uid://c2ysbsnibsc7i" path="res://Assets/Spike.png" id="3_wqbtr"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_3dh82"]
+points = PackedVector2Array(0, -10, 8.66025, 5, -8.66025, 5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(1293.53, 457.336)
+script = ExtResource("1_e7jel")
+
+[node name="death" type="AudioStreamPlayer" parent="Area2D2"]
+stream = ExtResource("2_hverd")
+volume_db = 15.0
+
+[node name="icon4" type="Sprite2D" parent="Area2D2"]
+position = Vector2(-1145.75, -522.369)
+scale = Vector2(0.338043, 0.338043)
+texture = ExtResource("3_wqbtr")
+flip_h = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-1164.51, -518.594)
+rotation = 1.5708
+scale = Vector2(6.32172, 6.09548)
+shape = SubResource("ConvexPolygonShape2D_3dh82")

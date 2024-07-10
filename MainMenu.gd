@@ -55,7 +55,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("ui_up") && !starting:
 		starting = true
-		#textButton.set_normal_texture(textButton.get_pressed_texture())
+		textButton.set_texture_normal(textButton.get_texture_hover())
 		
 		sfxSt.play()
 		

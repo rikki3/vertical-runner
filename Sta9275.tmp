@@ -69,7 +69,7 @@ position = Vector2(-1.1664, -5.52535)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5")]
 process_mode = 3
-position = Vector2(100.79, 482.532)
+position = Vector2(89.7896, 794.532)
 scale = Vector2(2.72742, 3.87257)
 collision_layer = 524289
 collision_mask = 1
@@ -94,7 +94,7 @@ stream = ExtResource("7")
 volume_db = 8.0
 
 [node name="Area2D4" type="Area2D" parent="."]
-position = Vector2(-385.58, 1009.25)
+position = Vector2(214.42, 1009.25)
 gravity = 98.0
 script = ExtResource("21_fd6l8")
 
@@ -111,8 +111,8 @@ shape = SubResource("3")
 [node name="1up" type="AudioStreamPlayer" parent="Area2D4"]
 stream = ExtResource("9")
 
-[node name="Particles2D1" type="GPUParticles2D" parent="."]
-position = Vector2(-214.976, 580.237)
+[node name="Particles2D1" type="GPUParticles2D" parent="Area2D4"]
+position = Vector2(170.604, -429.013)
 scale = Vector2(0.09, 0.09)
 amount = 1
 process_material = SubResource("ParticleProcessMaterial_vb753")
@@ -120,10 +120,9 @@ texture = ExtResource("10")
 lifetime = 1.3
 speed_scale = 5.0
 explosiveness = 0.8
-script = ExtResource("21_fd6l8")
 
 [node name="Area2D1" type="Area2D" parent="."]
-position = Vector2(-477, 625)
+position = Vector2(123, 625)
 gravity = 98.0
 script = ExtResource("21_fd6l8")
 
@@ -141,8 +140,8 @@ shape = SubResource("3")
 stream = ExtResource("12")
 volume_db = -10.0
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(-306.396, 195.988)
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Area2D1"]
+position = Vector2(170.604, -429.012)
 scale = Vector2(0.09, 0.09)
 amount = 1
 process_material = SubResource("ParticleProcessMaterial_faild")
@@ -150,10 +149,9 @@ texture = ExtResource("13")
 lifetime = 1.3
 speed_scale = 5.0
 explosiveness = 0.8
-script = ExtResource("21_fd6l8")
 
 [node name="Area2D6" type="Area2D" parent="."]
-position = Vector2(-531, 1056)
+position = Vector2(69, 1056)
 gravity = 98.0
 script = ExtResource("21_fd6l8")
 
@@ -171,8 +169,8 @@ shape = SubResource("3")
 stream = ExtResource("12")
 volume_db = -5.0
 
-[node name="Particles2D3" type="GPUParticles2D" parent="."]
-position = Vector2(-325, 627)
+[node name="Particles2D3" type="GPUParticles2D" parent="Area2D6"]
+position = Vector2(206, -429)
 scale = Vector2(0.09, 0.09)
 amount = 1
 process_material = SubResource("ParticleProcessMaterial_0uh7s")
@@ -180,10 +178,9 @@ texture = ExtResource("16")
 lifetime = 1.3
 speed_scale = 5.0
 explosiveness = 0.8
-script = ExtResource("21_fd6l8")
 
 [node name="Area2D5" type="Area2D" parent="."]
-position = Vector2(-443, 832)
+position = Vector2(157, 832)
 gravity = 98.0
 script = ExtResource("21_fd6l8")
 
@@ -201,8 +198,8 @@ shape = SubResource("3")
 stream = ExtResource("12")
 volume_db = -5.0
 
-[node name="Particles2D2" type="GPUParticles2D" parent="."]
-position = Vector2(-267, 403)
+[node name="Particles2D2" type="GPUParticles2D" parent="Area2D5"]
+position = Vector2(176, -429)
 scale = Vector2(0.09, 0.09)
 amount = 1
 process_material = SubResource("ParticleProcessMaterial_lrffb")
@@ -210,24 +207,24 @@ texture = ExtResource("18")
 lifetime = 1.3
 speed_scale = 5.0
 explosiveness = 0.8
-script = ExtResource("21_fd6l8")
 
 [node name="Area2D2" type="Area2D" parent="."]
-position = Vector2(1295.53, 825.336)
+position = Vector2(1293.53, 825.336)
 script = ExtResource("21_fd6l8")
 
 [node name="death" type="AudioStreamPlayer" parent="Area2D2"]
 stream = ExtResource("19")
 volume_db = 15.0
 
-[node name="icon5" type="Sprite2D" parent="Area2D2"]
-position = Vector2(-797.75, -522.369)
+[node name="icon4" type="Sprite2D" parent="Area2D2"]
+position = Vector2(-1145.75, -522.369)
 scale = Vector2(0.338043, 0.338043)
 texture = ExtResource("20")
+flip_h = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(-772.51, -518.594)
-rotation = -1.5708
+position = Vector2(-1164.51, -518.594)
+rotation = 1.5708
 scale = Vector2(6.32172, 6.09548)
 shape = SubResource("4")
 
@@ -236,19 +233,16 @@ position = Vector2(226.609, 85.4425)
 gravity = 98.0
 
 [node name="RightWall" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2(444.056, 383.149)
+position = Vector2(447.056, 383.149)
 scale = Vector2(8.90316, 51.6675)
 shape = SubResource("2")
 
 [node name="LeftWall" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2(-252.217, 381.149)
+position = Vector2(-260.217, 381.149)
 scale = Vector2(8.90316, 51.6675)
 shape = SubResource("2")
 
-[node name="TimerSpawnSpike" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
-autostart = true
+[node name="Area2DQueueFree" type="Area2D" parent="."]
 
 [node name="Score" type="Label" parent="."]
 offset_left = 291.0
@@ -340,3 +334,4 @@ texture = ExtResource("25")
 [connection signal="finished" from="Area2D5/powerInvin" to="." method="_on_powerInvin_finished"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="Area2D3" to="." method="_on_Area2D3_body_enter"]
+[connection signal="body_entered" from="Area2DQueueFree" to="." method="_on_area_2d_queue_free_body_entered"]

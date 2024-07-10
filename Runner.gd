@@ -15,12 +15,6 @@ func _run(vec2):
 func _direction(status, pwrSpd, pwrSlw):
 	if status == "Climbing":
 		anim.play("Climbing")
-		if pwrSpd:
-			motion.y = -600
-		if pwrSlw:
-			motion.y = -80
-		elif !pwrSpd && !pwrSlw:
-			motion.y = -300
 		motion.x = 0
 	elif status == "JumpR":
 			sfxJump.play()
@@ -28,23 +22,17 @@ func _direction(status, pwrSpd, pwrSlw):
 			anim.play("Jumping")
 			if pwrSpd:
 				motion.x = 1560
-				motion.y = -260
 			if pwrSlw:
 				motion.x = 560
-				motion.y = -18
 			elif !pwrSlw && !pwrSpd:
 				motion.x = 780
-				motion.y = -130
 	elif status == "JumpL":
 			sfxJump.play()
 			anim.set_flip_h(true)
 			anim.play("Jumping")
 			if pwrSpd:
 				motion.x = -1560
-				motion.y = -260
 			if pwrSlw:
 				motion.x = -560
-				motion.y = -18
 			elif !pwrSlw && !pwrSpd:
 				motion.x = -780
-				motion.y = -130

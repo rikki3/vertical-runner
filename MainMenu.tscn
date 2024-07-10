@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dyw300u7i63lr"]
+[gd_scene load_steps=14 format=3 uid="uid://dyw300u7i63lr"]
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1"]
 [ext_resource type="AudioStream" uid="uid://b35pygotja0us" path="res://Assets/sounds/start.ogg" id="2"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bx6q11y3kwrv4" path="res://Assets/flag_mid.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://dlbcahfeoot6k" path="res://Assets/start.png" id="8"]
 [ext_resource type="Texture2D" uid="uid://dm8qpb8koueb2" path="res://Assets/start_hover.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://bdaen8rj67g6p" path="res://Assets/start_pressed.png" id="9_rgv55"]
 [ext_resource type="FontFile" uid="uid://n4cpfdxsu7jr" path="res://Assets/font/Parasite Game - Personal Use.ttf" id="10_gxir3"]
 
 [sub_resource type="Animation" id="1"]
@@ -99,31 +100,34 @@ scale = Vector2(0.3649, 2.47125)
 texture = ExtResource("7")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 224.0
-offset_top = 578.0
-offset_right = 524.0
-offset_bottom = 878.0
+offset_left = 248.0
+offset_top = 529.0
+offset_right = 548.0
+offset_bottom = 1133.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("8")
-texture_pressed = ExtResource("9")
-texture_hover = ExtResource("8")
+texture_pressed = ExtResource("9_rgv55")
+texture_hover = ExtResource("9")
 
 [node name="Vertical" type="Label" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 5.0
-offset_top = 202.0
-offset_right = 429.0
-offset_bottom = 282.0
+offset_left = 11.0
+offset_top = 181.0
+offset_right = 512.0
+offset_bottom = 356.0
 size_flags_vertical = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0.226562, 1, 1)
@@ -133,15 +137,16 @@ theme_override_constants/shadow_offset_y = 3
 theme_override_constants/shadow_outline_size = 3
 theme_override_constants/line_spacing = 3
 theme_override_fonts/font = ExtResource("10_gxir3")
+theme_override_font_sizes/font_size = 140
 text = "Vertical"
 
 [node name="Runner" type="Label" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 5.0
-offset_top = 272.0
-offset_right = 429.0
-offset_bottom = 352.0
+offset_left = 22.0
+offset_top = 293.0
+offset_right = 503.0
+offset_bottom = 468.0
 size_flags_vertical = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 0, 0, 1)
@@ -151,14 +156,15 @@ theme_override_constants/shadow_offset_y = 3
 theme_override_constants/shadow_outline_size = 3
 theme_override_constants/line_spacing = 3
 theme_override_fonts/font = ExtResource("10_gxir3")
+theme_override_font_sizes/font_size = 140
 text = "Runner"
 
 [node name="Game" type="Label" parent="."]
 layout_mode = 0
-offset_left = 93.0
-offset_top = 188.0
-offset_right = 318.0
-offset_bottom = 364.0
+offset_left = 11.0
+offset_top = 121.0
+offset_right = 325.0
+offset_bottom = 297.0
 size_flags_vertical = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0.226562, 1, 1)
@@ -168,14 +174,15 @@ theme_override_constants/shadow_offset_y = 3
 theme_override_constants/shadow_outline_size = 3
 theme_override_constants/line_spacing = 3
 theme_override_fonts/font = ExtResource("10_gxir3")
+theme_override_font_sizes/font_size = 170
 text = "Game"
 
 [node name="Over" type="Label" parent="."]
 layout_mode = 0
-offset_left = 93.0
-offset_top = 258.0
-offset_right = 318.0
-offset_bottom = 434.0
+offset_left = 6.0
+offset_top = 270.0
+offset_right = 321.0
+offset_bottom = 446.0
 size_flags_vertical = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 0, 0, 1)
@@ -185,6 +192,7 @@ theme_override_constants/shadow_offset_y = 3
 theme_override_constants/shadow_outline_size = 3
 theme_override_constants/line_spacing = 3
 theme_override_fonts/font = ExtResource("10_gxir3")
+theme_override_font_sizes/font_size = 170
 text = "Over"
 
 [node name="Text" type="Label" parent="."]

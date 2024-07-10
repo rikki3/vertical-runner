@@ -1,71 +1,91 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=13 format=3 uid="uid://bq0j1vqtfiv87"]
 
-[ext_resource path="res://Runner.gd" type="Script" id=1]
-[ext_resource path="res://Assets/sounds/jump.ogg" type="AudioStream" id=2]
-[ext_resource path="res://Assets/PNG/Animation/Jumping/jump.png" type="Texture2D" id=3]
-[ext_resource path="res://Assets/PNG/Animation/Climbing/00.png" type="Texture2D" id=4]
-[ext_resource path="res://Assets/PNG/Animation/Climbing/01.png" type="Texture2D" id=5]
-[ext_resource path="res://Assets/PNG/Animation/Climbing/02.png" type="Texture2D" id=6]
-[ext_resource path="res://Assets/PNG/Animation/Climbing/03.png" type="Texture2D" id=7]
-[ext_resource path="res://Assets/PNG/Animation/Climbing/04.png" type="Texture2D" id=8]
-[ext_resource path="res://Assets/PNG/Animation/Climbing/05.png" type="Texture2D" id=9]
-[ext_resource path="res://Assets/PNG/Animation/Climbing/06.png" type="Texture2D" id=10]
+[ext_resource type="Script" path="res://Runner.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://c48fvte4jdckh" path="res://Assets/sounds/jump.ogg" id="2"]
+[ext_resource type="Texture2D" uid="uid://d3jwvw5imwfpd" path="res://Assets/PNG/Animation/Jumping/jump.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cyts6vnobnqnx" path="res://Assets/PNG/Animation/Climbing/00.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://b8pyvc5lwn5n6" path="res://Assets/PNG/Animation/Climbing/01.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://qooj8mwihmc" path="res://Assets/PNG/Animation/Climbing/02.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://crdgb3bdrd00m" path="res://Assets/PNG/Animation/Climbing/03.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dgr5rf2ql8r7d" path="res://Assets/PNG/Animation/Climbing/04.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://blajq1w3k5dx6" path="res://Assets/PNG/Animation/Climbing/05.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://befhosvop6172" path="res://Assets/PNG/Animation/Climbing/06.png" id="10"]
 
-[sub_resource type="CapsuleShape2D" id=1]
-
-custom_solver_bias = 0.0
-radius = 10.0
-height = 20.0
-
-[sub_resource type="SpriteFrames" id=2]
-
-animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": false,
-"name": "Jumping",
-"speed": 13.0
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4")
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}],
 "loop": true,
-"name": "Climbing",
+"name": &"Climbing",
 "speed": 30.0
-} ]
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3")
+}],
+"loop": false,
+"name": &"Jumping",
+"speed": 13.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="1"]
+height = 41.5336
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-
-position = Vector2( 51.1407, 154.645 )
-scale = Vector2( 3.93491, 5.12687 )
-input_pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Transform2D( 1.12915, 0, 0, 1.10776, 0.110384, -0.309498 )
-shapes/0/trigger = false
-collision_layer = 1
+position = Vector2(51.1407, 154.645)
+scale = Vector2(3.93491, 5.12687)
 collision_mask = 0
-collision/safe_margin = 0.08
-script = ExtResource( 1 )
+script = ExtResource("1")
 
 [node name="jump" type="AudioStreamPlayer" parent="."]
-
-stream = ExtResource( 2 )
-playing = false
-loop = false
+stream = ExtResource("2")
 volume_db = 10.0
-autoplay = false
-paused = false
-loop_offset = 0.0
-buffering_msec = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-
-position = Vector2( 2.63332, -1.09424 )
-scale = Vector2( 0.165747, 0.113459 )
-frames = SubResource( 2 )
-animation = "Climbing"
+position = Vector2(2.63332, -1.09424)
+scale = Vector2(0.165747, 0.113459)
+sprite_frames = SubResource("2")
+animation = &"Climbing"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
-position = Vector2( 0.110384, -0.309498 )
-scale = Vector2( 1.12915, 1.10776 )
-shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
+position = Vector2(0.110384, -0.309498)
+scale = Vector2(1.12915, 1.10776)
+shape = SubResource("1")

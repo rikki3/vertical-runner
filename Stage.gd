@@ -28,9 +28,7 @@ extends Node2D
 @onready var indiS = get_node("indiSpeed")
 @onready var indiI = get_node("indiInvin")
 @onready var indiSl = get_node("indiSlow")
-#@onready var anim1 = get_node("Area2D2/AnimationPlayer")
-#@onready var anim2 = get_node("Area2D2/AnimationPlayer2")
-#@onready var anim3 = get_node("Area2D2/AnimationPlayer3")
+@onready var timerSpawnSpike = get_node("TimerSpawnSpike")
 
 var oneUp = true
 var dead
@@ -43,6 +41,18 @@ var powerSpeed
 var powerInvin
 var powerSlow
 var save = FileAccess.open("res://save.dat", FileAccess.WRITE_READ)
+var rng = RandomNumberGenerator.new()
+var rngVal
+var sceneSpike
+
+func duplicateObjectAtPosition(posLR):
+	if posLR:
+		sceneSpike = preload("res://TestSpike.tscn")
+	else:
+		sceneSpike = preload("res://TestSpikeR.tscn")
+	var duplicatedObject = sceneSpike.instantiate()
+	duplicatedObject.get_node("Area2D2").connect("body_entered", _on_area_2d_2_body_entered)
+	add_child(duplicatedObject)
 
 func _ready():
 	set_process_input(true)
@@ -54,13 +64,21 @@ func _ready():
 	particles.hide()
 	particlesHP.hide()
 	particlesSlw.hide()
+	particlesStr.hide()
 	powerUp2.hide()
-	powerUp3.hide()
+	#powerUp3.hide()
 	indiI.hide()
 	indiS.hide()
 	indiSl.hide()
 	
 func _physics_process(delta):
+	if timerSpawnSpike.get_time_left() == 0:
+		rngVal = rng.randi_range(0,1)
+		if rngVal == 0:
+			duplicateObjectAtPosition(true)
+		else:
+			duplicateObjectAtPosition(false)
+		timerSpawnSpike.start()
 	if dead:
 		runner.hide()
 	if Input.is_action_pressed("ui_up") && !jumping && !dead:
@@ -68,11 +86,11 @@ func _physics_process(delta):
 			runner.direc = "Right"
 		elif runner.direc == "Right":
 			runner.direc = "Left"
-		jumping = true;			
+		jumping = true;
 		if runner.direc == "Left":
 			runner._direction("JumpR", powerSpeed, powerSlow)
 		elif runner.direc == "Right":
-			runner._direction("JumpL", powerSlow, powerSlow)
+			runner._direction("JumpL", powerSpeed, powerSlow)
 #		if !powerSpeed && !powerSlow:
 #
 #		elif powerSpeed:
@@ -88,43 +106,6 @@ func _on_Area2D_body_enter( body ):
 	lblScore.set_text(str(score))
 	OS.delay_msec(650)
 	#get_tree().change_scene_to_file("res://Stage.tscn")
-
-func _on_Area2D2_body_enter( body ):
-	print("1")
-	if !powerInvin:
-		print("1.5")
-		soundDe.play()
-		indiS.hide()
-		indiSl.hide()
-		powerSpeed = false
-		powerSlow = false		
-		if soundSd.is_playing():
-			soundSd.stop()
-		#if soundSl.is_playing():
-			#soundSl.stop()
-		if !soundBg.is_playing():
-			soundBg._set_playing(true)
-		lives = int(lblLives.get_text())-1
-		if lives == 0:
-			trackLife()
-			lblLives.set_text(str(lives))
-			_app.isInitialLoad = false
-			if score != null && _app.score < score:
-				_app.score = score
-			soundGo.play()
-			dead = true
-		else:
-			trackLife()
-			lblLives.set_text(str(lives))
-			runner.set_global_position(startingPos)
-			runner.direc = "Right"
-			jumping = false
-			runner._direction("Climbing", false, false)
-		if lives < 3 && oneUp == true:
-			powerUp2.show()
-	else:
-		print("metal clank/spark sfx")
-	print("2")
 
 func trackLife():
 		if lives == 3:
@@ -155,6 +136,8 @@ func _on_Area2D3_body_enter( body ):
 func _on_Area2D1_body_enter( body ):
 	particles.show()
 	powerSpeed = true
+	powerSlow = false
+	indiSl.hide()
 	soundSd.play()
 	soundBg._set_playing(false)
 	soundPs.play()
@@ -192,6 +175,7 @@ func _on_1up_finished():
 	powerUp2.queue_free()
 
 func _on_Area2D5_body_enter( body ):
+	powerUp3.hide()
 	particlesStr.show()
 	indiI.show()
 	powerInvin = true
@@ -211,7 +195,46 @@ func _on_powerSlow_finished():
 
 
 func _on_Area2D6_body_enter( body ):
+	powerUp4.hide()
 	particlesSlw.show()
+	powerSpeed = false
+	indiS.hide()
 	indiSl.show()
 	powerSlow = true
 	soundSl.play()
+
+func _on_area_2d_2_body_entered(body):
+	if !powerInvin:
+		if is_instance_valid(soundDe):
+			soundDe.play()
+		indiS.hide()
+		indiSl.hide()
+		powerSpeed = false
+		powerSlow = false		
+		if soundSd.is_playing():
+			soundSd.stop()
+		#if soundSl.is_playing():
+			#soundSl.stop()
+		if !soundBg.is_playing():
+			soundBg._set_playing(true)
+		lives = int(lblLives.get_text())-1
+		if lives == 0:
+			trackLife()
+			lblLives.set_text(str(lives))
+			_app.isInitialLoad = false
+			if score != null && _app.score < score:
+				_app.score = score
+			soundGo.play()
+			dead = true
+		else:
+			trackLife()
+			lblLives.set_text(str(lives))
+			runner.set_global_position(startingPos)
+			runner.direc = "Right"
+			jumping = false
+			runner._direction("Climbing", false, false)
+		if lives < 3 && oneUp == true:
+			if is_instance_valid(powerUp2):
+				powerUp2.show()
+	else:
+		print("metal clank/spark sfx")
